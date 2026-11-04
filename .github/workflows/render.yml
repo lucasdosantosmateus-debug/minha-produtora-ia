@@ -26,7 +26,7 @@ jobs:
         run: npx remotion render src/Root.tsx Torre42Trailer saida.mp4 --concurrency=1
 
       - name: Guardar Vídeo Gerado
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: video-saida
           path: saida.mp4
