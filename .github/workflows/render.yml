@@ -7,19 +7,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: node:18-bullseye
+
     steps:
       - name: Aceder ao Código
         uses: actions/checkout@v3
 
-      - name: Instalar Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Instalar dependências do sistema para o Chrome
+        run: |
+          apt-get update && apt-get install -y wget gnupg
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          apt-get update && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends
 
-      - name: Instalar Chrome para o Remotion
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Instalar Dependências
+      - name: Instalar Dependências do Projeto
         run: npm install
 
       - name: Renderizar com Remotion
