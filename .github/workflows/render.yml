@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Renderizar com Remotion
-        run: npx remotion render src/Root.tsx Torre42Trailer saida.mp4 --concurrency=1 --gl=swiftshader
+        run: npx remotion render src/Root.tsx Torre42Trailer saida.mp4 --concurrency=1
 
       - name: Guardar Vídeo Gerado
         uses: actions/upload-artifact@v4
