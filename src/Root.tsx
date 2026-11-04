@@ -1,4 +1,4 @@
-import { Composition } from "remotion";
+import { Composition, registerRoot } from "remotion";
 import { MainVideo } from "./VideoComponent";
 import episodeData from "../episodio-01.json";
 
@@ -15,3 +15,5 @@ export const Root = () => {
     />
   );
 };
+
+registerRoot(Root);
