@@ -1,0 +1,32 @@
+{
+  "episode_id": "torre_42_trailer",
+  "title": "Torre 42: O Último Turno",
+  "total_duration_seconds": 60,
+  "soundtrack_global": {
+    "mood": "dark_cyberpunk_suspense",
+    "bpm": 110,
+    "ai_prompt": "Dark atmospheric sci-fi synth drone, rhythmic low pulse, ticking clock elements, tense and claustrophobic, no vocals"
+  },
+  "scenes": [
+    {
+      "scene_id": "tr_sc_01",
+      "duration_frames": 450,
+      "background": "torre_hall_escuro",
+      "overlay_texts": [
+        { "start_frame": 0, "end_frame": 150, "text": "23:45", "position": "top_left" },
+        { "start_frame": 30, "end_frame": 150, "text": "TURNO 1", "position": "top_center" }
+      ],
+      "narrator": {
+        "timing": { "start": 1.0, "end": 4.5 },
+        "text": "Todos os acessos externos foram trancados."
+      }
+    }
+  ],
+  "interactive_voting_screen": {
+    "question": "O que o grupo fará agora?",
+    "options": [
+      { "id": "1", "label": "SUBIR PELA ESCADA DE EMERGÊNCIA" },
+      { "id": "2", "label": "USAR O ELEVADOR DE CARGA" }
+    ]
+  }
+}
