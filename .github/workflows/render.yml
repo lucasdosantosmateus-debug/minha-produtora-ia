@@ -20,4 +20,4 @@ jobs:
         run: npm install
 
       - name: Renderizar com Remotion
-        run: npm run build
+        run: npx remotion render src/Root.tsx Torre42Trailer saida.mp4 --concurrency=1 --gl=swiftshader
