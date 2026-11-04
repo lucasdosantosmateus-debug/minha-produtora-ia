@@ -1,0 +1,23 @@
+name: Renderizar Video Remotion
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Aceder ao Código
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Renderizar com Remotion
+        run: npx remotion render src/Root.tsx Torre42Trailer saida.mp4
